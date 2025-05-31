@@ -19,13 +19,13 @@ const path = require("path");
   await execa("git", ["push", "origin", "--tags"]);
 
   const pkg = JSON.parse(
-    await fs.readFile(path.resolve(process.cwd(), "package.json"), "utf-8")
+    await fs.readFile(path.resolve(process.cwd(), "package.json"), "utf-8"),
   );
 
   console.log("Done!");
 
   console.log(
-    `Open https://github.com/tktcorporation/node-actionlint/releases/new?tag=v${pkg.version} and create new release.`
+    `Open https://github.com/tktcorporation/node-actionlint/releases/new?tag=v${pkg.version} and create new release.`,
   );
 
   /**
@@ -35,7 +35,7 @@ const path = require("path");
   function assertRelease(value) {
     if (!["major", "minor", "patch"].includes(value)) {
       throw new Error(
-        `${value} is not valid release. Must be 'major' or 'minor' or 'patch'.`
+        `${value} is not valid release. Must be 'major' or 'minor' or 'patch'.`,
       );
     }
   }
