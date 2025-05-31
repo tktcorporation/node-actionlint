@@ -22,6 +22,7 @@
     "lint": "npm run lint:tsc && npm run lint:prettier",
     "lint:tsc": "tsc --noEmit",
     "lint:prettier": "prettier --check .",
+    "lint:fix": "npm run lint:prettier -- --write",
     "test": "npm run build:tsc && jest",
     "release": "node ./scripts/release.js"
   },
