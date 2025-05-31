@@ -27,7 +27,9 @@
     "release": "node ./scripts/release.js"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./jest.setup.js"]
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   },
   "keywords": [],
   "author": "",

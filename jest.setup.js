@@ -1,5 +1,5 @@
-const crypto = require('crypto');
+const crypto = require("crypto");
 global.crypto = crypto;
 
-const { performance } = require('perf_hooks');
-global.performance = performance; 
+const { performance } = require("perf_hooks");
+global.performance = performance;
