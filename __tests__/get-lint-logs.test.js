@@ -37,6 +37,18 @@ describe("get linting log", () => {
         chalk.gray(":") +
         1 +
         " " +
+        chalk.bold.white('"on" section is missing in workflow') +
+        " " +
+        chalk.gray("[ syntax-check ]") +
+        "\n" +
+        "> 1 | hogehoge  \n" +
+        "    | ^\n" +
+        chalk.yellow("test.yml") +
+        chalk.gray(":") +
+        1 +
+        chalk.gray(":") +
+        1 +
+        " " +
         chalk.bold.white('"jobs" section is missing in workflow') +
         " " +
         chalk.gray("[ syntax-check ]") +

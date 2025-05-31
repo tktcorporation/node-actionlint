@@ -25,7 +25,7 @@ const path = require("path");
   console.log("Done!");
 
   console.log(
-    `Open https://github.com/sosukesuzuki/node-actionlint/releases/new?tag=v${pkg.version} and create new release.`
+    `Open https://github.com/tktcorporation/node-actionlint/releases/new?tag=v${pkg.version} and create new release.`
   );
 
   /**

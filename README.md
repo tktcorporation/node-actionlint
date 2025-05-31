@@ -1,5 +1,7 @@
 # node-actionlint
 
+This is a fork of [sosukesuzuki/node-actionlint](https://github.com/sosukesuzuki/node-actionlint).
+
 Run [rhysd/actionlint](https://github.com/rhysd/actionlint) from Node.js.
 
 Most parts of `main.go` are reused from [rhysd/actionlint/playground/main.go](https://github.com/rhysd/actionlint/blob/6cd29e315e578dab938b12db7978749afb07c9b0/playground/main.go).

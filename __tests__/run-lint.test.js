@@ -15,6 +15,12 @@ describe("run actionlint via wasm", () => {
         column: 1,
         kind: "syntax-check",
         line: 1,
+        message: '"on" section is missing in workflow',
+      },
+      {
+        column: 1,
+        kind: "syntax-check",
+        line: 1,
         message: '"jobs" section is missing in workflow',
       },
     ]);
