@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "lib": ["es2020"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowArbitraryExtensions": true,
+    "module": "commonjs",
     "outDir": "./build",
     "rootDir": "./src",
     "strict": true,
