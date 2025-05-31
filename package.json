@@ -2,7 +2,6 @@
   "name": "@tktco/node-actionlint",
   "version": "1.5.1",
   "description": "",
-  "type": "module",
   "main": "src/index.js",
   "bin": "bin/node-actionlint.js",
   "types": "./build/index.d.ts",
