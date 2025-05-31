@@ -1,5 +1,5 @@
 {
-  "name": "node-actionlint",
+  "name": "@tktco/node-actionlint",
   "version": "1.2.2",
   "description": "",
   "main": "src/index.js",
@@ -12,6 +12,9 @@
     "main.wasm",
     "LICENSE.txt"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "npm run build:go && npm run build:tsc",
     "build:go": "make install && make build",
