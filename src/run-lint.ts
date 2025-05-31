@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { FileData, LintResult, Result } from "./types";
+import "../../wasm_exec.js";
 
 type RunActionLint = (src: string, path: string) => Array<LintResult>;
 async function initialize(): Promise<RunActionLint> {
@@ -8,13 +9,16 @@ async function initialize(): Promise<RunActionLint> {
   global.throwError = function throwError(msg: string) {
     throw new Error(msg);
   };
-  require("../wasm_exec.js");
+  // require("../wasm_exec.js");
   // @ts-ignore
   const go = new global.Go();
+
+  const wasmPath = path.resolve(process.cwd(), "main.wasm");
+
   // @ts-ignore
   const { instance } = await WebAssembly.instantiate(
-    await fs.readFile(path.join(__dirname, "../main.wasm")),
-    go.importObject
+    await fs.readFile(wasmPath),
+    go.importObject,
   );
   go.run(instance);
   // @ts-ignore
@@ -30,14 +34,14 @@ export async function runLint(fileData: string, filePath: string) {
 }
 
 export async function runLintForFiles(
-  files: FileData[]
+  files: FileData[],
 ): Promise<Array<Result>> {
   const results = (
     await Promise.all(
       files.map(async (file) => {
         const lintResults = await runLint(file.data, file.path);
         return lintResults.map((result) => ({ ...result, ...file }));
-      })
+      }),
     )
   )
     .flat()

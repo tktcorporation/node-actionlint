@@ -1,6 +1,6 @@
-const chalk = require("chalk");
-const { getLintLog } = require("../build/get-lint-log");
-const { runLint } = require("../build/run-lint");
+import chalk from "chalk";
+import { getLintLog } from "../build/get-lint-log";
+import { runLint } from "../build/run-lint";
 
 describe("get linting log", () => {
   it("returns log text from linting errors", async () => {
@@ -12,7 +12,7 @@ describe("get linting log", () => {
           data: invalidWorkflowCode,
           ...result,
         };
-      }
+      },
     );
     const text = getLintLog(results);
     //     console.log(`${text}`);
@@ -24,7 +24,7 @@ describe("get linting log", () => {
         1 +
         " " +
         chalk.bold.white(
-          "workflow is scalar node but mapping node is expected"
+          "workflow is scalar node but mapping node is expected",
         ) +
         " " +
         chalk.gray("[ syntax-check ]") +
@@ -54,7 +54,7 @@ describe("get linting log", () => {
         chalk.gray("[ syntax-check ]") +
         "\n" +
         "> 1 | hogehoge  \n" +
-        "    | ^\n"
+        "    | ^\n",
     );
   });
 });
