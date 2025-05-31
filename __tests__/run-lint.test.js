@@ -1,4 +1,5 @@
 import { runLint } from "../build/run-lint";
+import { describe, it, expect } from "vitest";
 
 describe("run actionlint via wasm", () => {
   it("returns linting error", async () => {

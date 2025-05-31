@@ -24,19 +24,8 @@
     "lint:tsc": "tsc --noEmit",
     "lint:prettier": "prettier --check .",
     "lint:fix": "npm run lint:prettier -- --write",
-    "test": "npm run build:tsc && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "npm run build:tsc && vitest run",
     "release": "node ./scripts/release.js"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./jest.setup.js"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/(?!chalk)/"
-    ],
-    "moduleNameMapper": {
-      "^../../wasm_exec.js$": "<rootDir>/wasm_exec.js"
-    }
   },
   "keywords": [],
   "author": "",
@@ -49,9 +38,10 @@
   "devDependencies": {
     "@types/babel__code-frame": "^7.0.6",
     "execa": "^9.6.0",
-    "jest": "^29.7.0",
     "minimist": "^1.2.8",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0"
   }
 }
