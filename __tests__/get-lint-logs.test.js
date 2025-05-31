@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import { getLintLog } from "../build/get-lint-log";
 import { runLint } from "../build/run-lint";
+import { describe, it, expect } from "vitest";
 
 describe("get linting log", () => {
   it("returns log text from linting errors", async () => {
