@@ -26,6 +26,9 @@
     "test": "npm run build:tsc && jest",
     "release": "node ./scripts/release.js"
   },
+  "jest": {
+    "setupFilesAfterEnv": ["./jest.setup.js"]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
