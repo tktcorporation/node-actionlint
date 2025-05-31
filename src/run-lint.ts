@@ -14,7 +14,7 @@ async function initialize(): Promise<RunActionLint> {
   // @ts-ignore
   const { instance } = await WebAssembly.instantiate(
     await fs.readFile(path.join(__dirname, "../main.wasm")),
-    go.importObject
+    go.importObject,
   );
   go.run(instance);
   // @ts-ignore
@@ -30,14 +30,14 @@ export async function runLint(fileData: string, filePath: string) {
 }
 
 export async function runLintForFiles(
-  files: FileData[]
+  files: FileData[],
 ): Promise<Array<Result>> {
   const results = (
     await Promise.all(
       files.map(async (file) => {
         const lintResults = await runLint(file.data, file.path);
         return lintResults.map((result) => ({ ...result, ...file }));
-      })
+      }),
     )
   )
     .flat()
