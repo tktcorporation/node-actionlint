@@ -9,20 +9,11 @@ Most parts of `main.go` are reused from [rhysd/actionlint/playground/main.go](ht
 ## CLI Usage
 
 ```
-$ npm install --save-dev node-actionlint
+$ npm install --save-dev @tktco/node-actionlint
+
+$ npx @tktco/node-actionlint
+OR
 $ ./node_modules/.bin/node-actionlint
-```
-
-## JavaScript Usage
-
-However, the main purpose of this package is to be used with the CLI.
-
-```js
-const { runActionLint } = require("node-actionlint");
-
-(async () => {
-  const results = await runActionLint(source, path);
-})();
 ```
 
 ## Development
