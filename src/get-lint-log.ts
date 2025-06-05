@@ -1,4 +1,5 @@
 import path from "path";
+// Use chalk 4.x here since chalk 5 is ESM-only and breaks CommonJS require
 import chalk from "chalk";
 import { codeFrameColumns } from "@babel/code-frame";
 import { Result } from "./types";
