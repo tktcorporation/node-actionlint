@@ -1,6 +1,6 @@
 {
   "name": "@tktco/node-actionlint",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "",
   "main": "./build/index.js",
   "bin": "bin/node-actionlint.js",
