@@ -2,7 +2,7 @@
   "name": "@tktco/node-actionlint",
   "version": "1.5.2",
   "description": "",
-  "main": "src/index.js",
+  "main": "./build/index.js",
   "bin": "bin/node-actionlint.js",
   "types": "./build/index.d.ts",
   "files": [
@@ -16,14 +16,17 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "build": "npm run build:go && npm run build:tsc",
+    "build": "npm run build:go && npm run build:ts",
     "build:go": "make install && make build",
+    "build:ts": "zshy",
     "build:tsc": "tsc",
+    "clean": "rm -rf build coverage .devcontainer/devcontainer.env",
+    "clean:all": "npm run clean && rm -f main.wasm wasm_exec.js",
     "lint": "npm run lint:tsc && npm run lint:prettier",
     "lint:tsc": "tsc --noEmit",
     "lint:prettier": "prettier --check .",
     "lint:fix": "npm run lint:prettier -- --write",
-    "test": "npm run build:tsc && vitest run",
+    "test": "npm run build:ts && vitest run",
     "release": "node ./scripts/release.js"
   },
   "keywords": [],
@@ -41,6 +44,31 @@
     "minimist": "^1.2.8",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "zshy": "^0.0.15"
+  },
+  "zshy": {
+    "entrypoints": [
+      "./src/index.ts",
+      "./src/cli.ts"
+    ],
+    "out": "build",
+    "exports": {
+      ".": "./src/index.ts",
+      "./cli": "./src/cli.ts"
+    }
+  },
+  "module": "./build/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.js"
+    },
+    "./cli": {
+      "types": "./build/cli.d.ts",
+      "import": "./build/cli.mjs",
+      "require": "./build/cli.js"
+    }
   }
 }
