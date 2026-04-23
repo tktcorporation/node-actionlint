@@ -24,9 +24,7 @@ describe("get linting log", () => {
         chalk.gray(":") +
         1 +
         " " +
-        chalk.bold.white(
-          "workflow is scalar node but mapping node is expected",
-        ) +
+        chalk.bold.white('"jobs" section is missing in workflow') +
         " " +
         chalk.gray("[ syntax-check ]") +
         "\n" +
@@ -50,7 +48,9 @@ describe("get linting log", () => {
         chalk.gray(":") +
         1 +
         " " +
-        chalk.bold.white('"jobs" section is missing in workflow') +
+        chalk.bold.white(
+          '"workflow" section is scalar node but mapping node is expected',
+        ) +
         " " +
         chalk.gray("[ syntax-check ]") +
         "\n" +

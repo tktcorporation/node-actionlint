@@ -10,7 +10,7 @@ describe("run actionlint via wasm", () => {
         column: 1,
         kind: "syntax-check",
         line: 1,
-        message: "workflow is scalar node but mapping node is expected",
+        message: '"jobs" section is missing in workflow',
       },
       {
         column: 1,
@@ -22,7 +22,8 @@ describe("run actionlint via wasm", () => {
         column: 1,
         kind: "syntax-check",
         line: 1,
-        message: '"jobs" section is missing in workflow',
+        message:
+          '"workflow" section is scalar node but mapping node is expected',
       },
     ]);
   });
